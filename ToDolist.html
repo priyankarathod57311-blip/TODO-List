@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO List</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center; /* Horizontal center */
+            align-items: center; 
+            height:40px;
+            width: 400px;
+            margin: 10px 50px 5px 50px;
+            border:none;
+            box-shadow: 5px 5px 10px gray;
+            outline: none;
+        }
+        #task{
+             height:40px;
+            width: 100px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px gray;
+            border: none;
+            background: linear-gradient(rgb(158, 101, 76), rgb(160, 50, 20));
+            margin: 5px 50px 20px 50px;
+
+            
+        }
+        button:hover{
+            size: 60px;
+        }
+        h1{
+    
+        }
+        body{
+        
+             display: flex;
+            justify-content: center; /* Horizontal center */
+            align-items: center; 
+            text-align: center;
+            margin:250px 250px 250px 250px;
+            padding: 50px 50px 50px 50px;
+            
+        }
+        div{
+            border: 1px solid black;
+            border-radius: 50px;
+            background: linear-gradient(rgb(23, 69, 87), lightblue);
+        }
+        h1{
+            color: white;
+        }
+
+
+</style>
+</head>
+
+<body>
+
+    <div>
+        <h1>TO DO List</h1>
+        <br>
+    <input  type="text"  placeholder="Enter a task" >
+    <br>
+    <button id="task">ADD Task</button>
+    
+    
+    
+    <ol> </ol>
+
+    </div>
+   
+    <script>
+        function addTask(){
+        let task = document.querySelector('input').value;
+        
+            
+        let ele = document.createElement('li');
+        ele.textContent = task;
+        
+        let orderdlist = document.querySelector('ol');
+        orderdlist.append(ele);
+        console.log(task);
+        let btn = document.createElement('button');
+        btn.textContent = '❌';
+        ele.append(btn);
+        btn.addEventListener('click',()=>{ele.remove()});
+        document.querySelector('input').value = '';
+        }
+        let button = document.querySelector('button');
+    button.addEventListener('click', addTask);
+    
+
+        
+    </script>
+</body>
+</html>
